@@ -1,5 +1,5 @@
 
-console.log("hey");
+console.log("calculator.js");
 
 var calculatorModule = function(){
 
