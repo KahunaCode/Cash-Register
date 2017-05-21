@@ -3,7 +3,7 @@
 var memory = [];
 var operator;
 var holder = "";
-var balance = "55";
+var balance = 0;
 
 var buttonClear = document.querySelector("#clear");
 buttonClear.addEventListener("click", function(){
@@ -17,6 +17,13 @@ var buttonBalance = document.querySelector("#getBalance");
 buttonBalance.addEventListener("click", function(){
   document.getElementById("display").innerHTML = balance;
 });
+
+var buttonDeposit = document.querySelector("#depositCash");
+buttonDeposit.addEventListener("click", function(){
+  balance += parseFloat(display.innerHTML);
+  document.getElementById("display").innerHTML = "0.00";
+});
+
 
 var button7 = document.querySelector("#seven");
 button7.addEventListener("click", function(){
@@ -45,9 +52,10 @@ var buttonEquals = document.querySelector("#equals");
     memory.push(holder);
     if (operator === "/"){
       console.log("mem1 = " + memory[0] +"\nmem2 = " + memory[1]);
-      var total = parseInt(memory[0])/parseInt(memory[1]);
+      var total = parseFloat(memory[0])/parseFloat(memory[1]);
       console.log("total is " + total);
       document.getElementById("display").innerHTML = total;
+      console.log(display.innerHTML);
     }
 
   });
