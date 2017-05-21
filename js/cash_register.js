@@ -21,9 +21,16 @@ buttonBalance.addEventListener("click", function(){
 var buttonDeposit = document.querySelector("#depositCash");
 buttonDeposit.addEventListener("click", function(){
   balance += parseFloat(display.innerHTML);
+  memory = [];
+  holder = "";
   document.getElementById("display").innerHTML = "0.00";
 });
 
+var buttonWithdraw = document.querySelector("#withdrawCash");
+buttonWithdraw.addEventListener("click", function(){
+  balance -= parseFloat(display.innerHTML);
+  document.getElementById("display").innerHTML = "0.00";
+});
 
 var button7 = document.querySelector("#seven");
 button7.addEventListener("click", function(){
@@ -55,6 +62,8 @@ var buttonEquals = document.querySelector("#equals");
       var total = parseFloat(memory[0])/parseFloat(memory[1]);
       console.log("total is " + total);
       document.getElementById("display").innerHTML = total;
+      memory = [];
+      holder = "";
       console.log(display.innerHTML);
     }
 
