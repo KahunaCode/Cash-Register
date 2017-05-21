@@ -33,11 +33,39 @@ buttonWithdraw.addEventListener("click", function(){
   document.getElementById("display").innerHTML = "0.00";
 });
 
+function numFunction(nnn, button){
+  button.addEventListener("click", function(){
+    holder += nnn;
+    document.getElementById("display").innerHTML = nnn;
+  });
+}
+
+var button;
+numButtons = ["7","8","9","4","5","6","1","2","3","0","00","."];
+for (i = 0; i < numButtons.length; i++){
+  button = document.createElement('button');
+  var numValue = numButtons[i];
+  button.innerHTML = numButtons[i];
+  button.addEventListener('click', numFunc);
+  document.body.appendChild(button);
+
+}
+
+function numFunc() {
+  var aaa = this.querySelectorAll(".numbers");
+  console.log(this);
+  console.log(this.innerHTML);
+  holder += this.innerHTML;
+  document.getElementById("display").innerHTML= this.innerHTML;
+}
+
+
+
 var button1 = document.querySelector("#one");
-button1.addEventListener("click", function(){
-  holder += "1";
-  document.getElementById("display").innerHTML=holder;
-});
+// button1.addEventListener("click", function(){
+//   holder += "1";
+//   document.getElementById("display").innerHTML=holder;
+// });
 
 var button2 = document.querySelector("#two");
 button2.addEventListener("click", function(){
