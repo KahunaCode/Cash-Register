@@ -1,3 +1,5 @@
+var calculator = calculatorModule();
+
 var memory = [];
 var operator;
 var holder = "";
