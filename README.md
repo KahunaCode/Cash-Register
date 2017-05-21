@@ -1,5 +1,13 @@
 # Cash Register
 
+to do:
+1- make number buttons inside loop
+2- make command buttons
+3- deal with concatenation issue (234 + 456)
+4- 5+5+5 issue
+5- CSS stylzzzzz
+
+
 An exercise related to [closures](https://slides.com/theremix/closures) and [js-calculator](https://github.com/devleague/js-calculator)
 
 ## Goal
