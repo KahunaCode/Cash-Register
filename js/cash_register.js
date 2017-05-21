@@ -5,20 +5,19 @@ var operator;
 
 // create number buttons
 var button8 = document.querySelector("#eight");
- button8.addEventListener("click", function(){
-    // cal.load(8);
-    director(8);
-    console.log(cal.getTotal());
-   document.getElementById("display").innerHTML="8";
+  button8.addEventListener("click", function(){
+  director(8);
+  console.log(cal.getTotal());
+  document.getElementById("display").innerHTML="8";
   });
 
  function opFunction(op, button){
   button.addEventListener("click", function(){
 
-    operator = op;
-    document.getElementById("display").innerHTML = op;
-    memory.push(holder);
-    holder = "";
+  operator = op;
+  document.getElementById("display").innerHTML = op;
+  memory.push(holder);
+  holder = "";
   });
 
 }
@@ -34,20 +33,15 @@ var button8 = document.querySelector("#eight");
 function director(aaa){
   if (!cal.getTotal() && !operator) {
     cal.load(aaa);
-  } else
-  {
-    if (cal.getTotal() && operator){
+  } else if (cal.getTotal() && operator){
       holder = aaa;
-    }
-  }
-
-  if (aaa === "/"){
+  } else if (aaa === "/"){
     operator = "/";
-  }if (aaa === "*"){
+  } else if (aaa === "*"){
     operator = "*";
-  }if (aaa === "+"){
+  } else if (aaa === "+"){
     operator = "+";
-  }if (aaa === "-"){
+  } else if (aaa === "-"){
     operator = "-";
   }
 }
@@ -84,28 +78,24 @@ var buttonEquals = document.querySelector("#equals");
   buttonEquals.addEventListener("click", function(){
   switch (operator) {
     case "/":
-    // cal.total = parseFloat(cal.total);
     cal.divide(parseFloat(holder));
     console.log("total = " + cal.getTotal() + ", holder is " + holder + ", operator is " + operator);
     break;
 
-    // case "*":
-    // cal.total = parseFloat(cal.total);
-    // cal.divide(parseFloat(holder));
-    // console.log("total = " + cal.total + ", holder is " + holder + ", operator is " + operator);
-    // break;
+    case "*":
+    cal.multiply(parseFloat(holder));
+    console.log("total = " + cal.getTotal() + ", holder is " + holder + ", operator is " + operator);
+    break;
 
-    // case "-":
-    // cal.total = parseFloat(cal.total);
-    // cal.divide(parseFloat(holder));
-    // console.log("total = " + cal.total + ", holder is " + holder + ", operator is " + operator);
-    // break;
+    case "-":
+    cal.subtract(parseFloat(holder));
+    console.log("total = " + cal.getTotal() + ", holder is " + holder + ", operator is " + operator);
+    break;
 
-    // case "+":
-    // cal.total = parseFloat(cal.total);
-    // cal.divide(parseFloat(holder));
-    // console.log("total = " + cal.total + ", holder is " + holder + ", operator is " + operator);
-    // break;
+    case "+":
+    cal.add(parseFloat(holder));
+    console.log("total = " + cal.getTotal() + ", holder is " + holder + ", operator is " + operator);
+    break;
   }
 
 
