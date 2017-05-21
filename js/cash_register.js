@@ -1,37 +1,41 @@
 
 
 var memory = [];
-var operator =[];
-var display;
+var operator;
+var holder = "";
 console.log(memory);
 
 var button7 = document.querySelector("#seven");
 //push to memory
 button7.addEventListener("click", function(){
-  memory.push(7);
-  document.getElementById("display").innerHTML="7";
+  holder += "7";
+  document.getElementById("display").innerHTML=holder;
 });
 
 var button8 = document.querySelector("#eight");
 //push to memory
 button8.addEventListener("click", function(){
-  memory.push(8);
-  document.getElementById("display").innerHTML="8";
-  console.log(memory)
+  holder += "8";
+  document.getElementById("display").innerHTML=holder;
+  console.log(memory);
 });
 
 var buttonDivide = document.querySelector("#divide");
 buttonDivide.addEventListener("click", function(){
   operator = "/";
   document.getElementById("display").innerHTML = "/";
+  memory.push(holder);
+  holder = "";
   console.log(operator);
 });
 
 var buttonEquals = document.querySelector("#equals");
   buttonEquals.addEventListener("click", function(){
+    memory.push(holder);
     if (operator === "/"){
-      var total = memory[0]/memory[1];
-      console.log(total);
+      console.log("mem1 = " + memory[0] +"\nmem2 = " + memory[1]);
+      var total = parseInt(memory[0])/parseInt(memory[1]);
+      console.log("total is " + total);
       document.getElementById("display").innerHTML = total;
     }
 
