@@ -3,17 +3,23 @@
 var memory = [];
 var operator;
 var holder = "";
-console.log(memory);
+var balance = 0;
+
+var buttonClear = document.querySelector("#clear");
+buttonClear.addEventListener("click", function(){
+  memory = [];
+  operator = "";
+  holder = "";
+  document.getElementById("display").innerHTML = "0.00";
+});
 
 var button7 = document.querySelector("#seven");
-//push to memory
 button7.addEventListener("click", function(){
   holder += "7";
   document.getElementById("display").innerHTML=holder;
 });
 
 var button8 = document.querySelector("#eight");
-//push to memory
 button8.addEventListener("click", function(){
   holder += "8";
   document.getElementById("display").innerHTML=holder;
