@@ -97,6 +97,12 @@ var buttonEquals = document.querySelector("#equals");
     console.log("total = " + cal.getTotal() + ", holder is " + holder + ", operator is " + operator);
     break;
   }
-
-
   });
+
+var buttonClear = document.querySelector("#clear");
+buttonClear.addEventListener("click", function(){
+  cal.clearMemory();
+  operator = "";
+  holder = "";
+  document.getElementById("display").innerHTML = "0.00";
+});
