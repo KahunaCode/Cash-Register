@@ -59,3 +59,24 @@ buttonDivide.addEventListener("click", function() {
   document.getElementById("display").innerHTML="/";
   console.log(operator);
 });
+
+var buttonMultiply = document.querySelector("#multiply");
+buttonMultiply.addEventListener("click", function() {
+  director("*");
+  document.getElementById("display").innerHTML="*";
+  console.log(operator);
+});
+
+var buttonSubtract = document.querySelector("#subtract");
+buttonSubtract.addEventListener("click", function() {
+  director("-");
+  document.getElementById("display").innerHTML="-";
+  console.log(operator);
+});
+
+var buttonAdd = document.querySelector("#add");
+buttonAdd.addEventListener("click", function() {
+  director("+");
+  document.getElementById("display").innerHTML="+";
+  console.log(operator);
+});
