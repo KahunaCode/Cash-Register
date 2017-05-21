@@ -47,7 +47,7 @@ for (i = 0; i < numButtons.length; i++){
   var numValue = numButtons[i];
   button.innerHTML = numButtons[i];
   button.addEventListener('click', numFunc);
-  document.body.appendChild(button);
+  document.getElementsByClassName("numbers")[0].appendChild(button);
 
 }
 
