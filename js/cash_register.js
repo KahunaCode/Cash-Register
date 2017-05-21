@@ -1,5 +1,3 @@
-//asdfs
-
 var memory = [];
 var operator;
 var holder = "";
@@ -145,22 +143,6 @@ buttonAdd.addEventListener("click", function(){
   console.log(operator);
 });
 
-
-// var buttonEquals = document.querySelector("#equals");
-//   buttonEquals.addEventListener("click", function(){
-//     memory.push(holder);
-//     if (operator === "/"){
-//       console.log("mem1 = " + memory[0] +"\nmem2 = " + memory[1]);
-//       var total = parseFloat(memory[0])/parseFloat(memory[1]);
-//       console.log("total is " + total);
-//       document.getElementById("display").innerHTML = total;
-//       memory = [];
-//       holder = "";
-//       console.log(display.innerHTML);
-//     }
-
-//   });
-
 var buttonEquals = document.querySelector("#equals");
   buttonEquals.addEventListener("click", function(){
     memory.push(holder);
@@ -206,32 +188,3 @@ var buttonEquals = document.querySelector("#equals");
 
   });
 
-
-
-
-//udpdate display
-console.log(memory);
-
-
-// total =
-//   if operator === "/"{
-//     memory[0]/memory[1]
-//   }
-
-
-
-
-
-
-
-
-
-// var button = document.querySelector("divide");
-// button.addEventListener ("click", function(){
-//     if(typeof num === "number"){
-//     total /= num;
-//     }
-//     else{
-//       throw new Error("not a number");
-//     }
-//   });
