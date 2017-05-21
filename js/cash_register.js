@@ -1,3 +1,4 @@
+//link calculator.js
 var calculator = calculatorModule();
 
 var memory = [];
@@ -109,48 +110,34 @@ buttonPeriod.addEventListener("click", function(){
   console.log(memory);
 });
 
+function opFunction(op, button){
+  button.addEventListener("click", function(){
+    operator = op;
+    document.getElementById("display").innerHTML = op;
+    memory.push(holder);
+    holder = "";
+  });
+
+}
+
 var buttonDivide = document.querySelector("#divide");
-buttonDivide.addEventListener("click", function(){
-  operator = "/";
-  document.getElementById("display").innerHTML = "/";
-  memory.push(holder);
-  holder = "";
-  console.log(operator);
-});
+opFunction("/", buttonDivide);
 
 var buttonMultiply = document.querySelector("#multiply");
-buttonMultiply.addEventListener("click", function(){
-  operator = "*";
-  document.getElementById("display").innerHTML = "*";
-  memory.push(holder);
-  holder = "";
-  console.log(operator);
-});
+opFunction("*", buttonMultiply);
 
 var buttonSubtract = document.querySelector("#subtract");
-buttonSubtract.addEventListener("click", function(){
-  operator = "-";
-  document.getElementById("display").innerHTML = "-";
-  memory.push(holder);
-  holder = "";
-  console.log(operator);
-});
+opFunction("-", buttonSubtract);
 
 var buttonAdd = document.querySelector("#add");
-buttonAdd.addEventListener("click", function(){
-  operator = "+";
-  document.getElementById("display").innerHTML = "+";
-  memory.push(holder);
-  holder = "";
-  console.log(operator);
-});
+opFunction("+", buttonAdd);
 
 var buttonEquals = document.querySelector("#equals");
   buttonEquals.addEventListener("click", function(){
     memory.push(holder);
     switch(operator) {
       case "/":
-        var totalD = parseFloat(memory[0])/parseFloat(memory[1]);
+        var totalD = parseFloat(memory[0]) / parseFloat(memory[1]);
         console.log("total is " + totalD);
         document.getElementById("display").innerHTML = totalD;
         memory = [];
