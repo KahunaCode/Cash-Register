@@ -54,89 +54,10 @@ for (i = 0; i < numButtons.length; i++){
 function numFunc() {
   var aaa = this.querySelectorAll(".numbers");
   console.log(this);
-  console.log(this.innerHTML);
+  console.log(typeof this.innerHTML);
   holder += this.innerHTML;
-  document.getElementById("display").innerHTML= this.innerHTML;
+  document.getElementById("display").innerHTML= holder;
 }
-
-
-
-var button1 = document.querySelector("#one");
-// button1.addEventListener("click", function(){
-//   holder += "1";
-//   document.getElementById("display").innerHTML=holder;
-// });
-
-var button2 = document.querySelector("#two");
-button2.addEventListener("click", function(){
-  holder += "2";
-  document.getElementById("display").innerHTML=holder;
-});
-
-var button3 = document.querySelector("#three");
-button3.addEventListener("click", function(){
-  holder += "3";
-  document.getElementById("display").innerHTML=holder;
-});
-
-var button4 = document.querySelector("#four");
-button4.addEventListener("click", function(){
-  holder += "4";
-  document.getElementById("display").innerHTML=holder;
-});
-
-var button5 = document.querySelector("#five");
-button5.addEventListener("click", function(){
-  holder += "5";
-  document.getElementById("display").innerHTML=holder;
-});
-
-var button6 = document.querySelector("#six");
-button6.addEventListener("click", function(){
-  holder += "6";
-  document.getElementById("display").innerHTML=holder;
-});
-
-var button7 = document.querySelector("#seven");
-button7.addEventListener("click", function(){
-  holder += "7";
-  document.getElementById("display").innerHTML=holder;
-});
-
-var button8 = document.querySelector("#eight");
-button8.addEventListener("click", function(){
-  holder += "8";
-  document.getElementById("display").innerHTML=holder;
-  console.log(memory);
-});
-
-var button9 = document.querySelector("#nine");
-button9.addEventListener("click", function(){
-  holder += "9";
-  document.getElementById("display").innerHTML=holder;
-  console.log(memory);
-});
-
-var button0 = document.querySelector("#zero");
-button0.addEventListener("click", function(){
-  holder += "0";
-  document.getElementById("display").innerHTML=holder;
-  console.log(memory);
-});
-
-var button00 = document.querySelector("#dub0");
-button00.addEventListener("click", function(){
-  holder += "00";
-  document.getElementById("display").innerHTML=holder;
-  console.log(memory);
-});
-
-var buttonPeriod = document.querySelector("#period");
-buttonPeriod.addEventListener("click", function(){
-  holder += ".";
-  document.getElementById("display").innerHTML=holder;
-  console.log(memory);
-});
 
 function opFunction(op, button){
   button.addEventListener("click", function(){
