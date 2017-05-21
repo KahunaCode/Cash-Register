@@ -118,20 +118,95 @@ buttonDivide.addEventListener("click", function(){
   console.log(operator);
 });
 
+var buttonMultiply = document.querySelector("#multiply");
+buttonMultiply.addEventListener("click", function(){
+  operator = "*";
+  document.getElementById("display").innerHTML = "*";
+  memory.push(holder);
+  holder = "";
+  console.log(operator);
+});
+
+var buttonSubtract = document.querySelector("#subtract");
+buttonSubtract.addEventListener("click", function(){
+  operator = "-";
+  document.getElementById("display").innerHTML = "-";
+  memory.push(holder);
+  holder = "";
+  console.log(operator);
+});
+
+var buttonAdd = document.querySelector("#add");
+buttonAdd.addEventListener("click", function(){
+  operator = "+";
+  document.getElementById("display").innerHTML = "+";
+  memory.push(holder);
+  holder = "";
+  console.log(operator);
+});
+
+
+// var buttonEquals = document.querySelector("#equals");
+//   buttonEquals.addEventListener("click", function(){
+//     memory.push(holder);
+//     if (operator === "/"){
+//       console.log("mem1 = " + memory[0] +"\nmem2 = " + memory[1]);
+//       var total = parseFloat(memory[0])/parseFloat(memory[1]);
+//       console.log("total is " + total);
+//       document.getElementById("display").innerHTML = total;
+//       memory = [];
+//       holder = "";
+//       console.log(display.innerHTML);
+//     }
+
+//   });
+
 var buttonEquals = document.querySelector("#equals");
   buttonEquals.addEventListener("click", function(){
     memory.push(holder);
-    if (operator === "/"){
-      console.log("mem1 = " + memory[0] +"\nmem2 = " + memory[1]);
-      var total = parseFloat(memory[0])/parseFloat(memory[1]);
-      console.log("total is " + total);
-      document.getElementById("display").innerHTML = total;
-      memory = [];
-      holder = "";
-      console.log(display.innerHTML);
+    switch(operator) {
+      case "/":
+        var totalD = parseFloat(memory[0])/parseFloat(memory[1]);
+        console.log("total is " + totalD);
+        document.getElementById("display").innerHTML = totalD;
+        memory = [];
+        holder = "";
+        console.log(display.innerHTML);
+        break;
+
+      case "*":
+        var totalM = parseFloat(memory[0]) * parseFloat(memory[1]);
+        console.log("total is " + totalM);
+        document.getElementById("display").innerHTML = totalM;
+        memory = [];
+        holder = "";
+        console.log(display.innerHTML);
+        break;
+
+      case "+":
+        var totalA = parseFloat(memory[0]) + parseFloat(memory[1]);
+        console.log("total is " + totalA);
+        document.getElementById("display").innerHTML = totalA;
+        memory = [];
+        holder = "";
+        console.log(display.innerHTML);
+        break;
+
+
+      case "-":
+        var totalS = parseFloat(memory[0]) - parseFloat(memory[1]);
+        console.log("total is " + totalS);
+        document.getElementById("display").innerHTML = totalS;
+        memory = [];
+        holder = "";
+        console.log(display.innerHTML);
+        break;
+
     }
 
   });
+
+
 
 
 //udpdate display
