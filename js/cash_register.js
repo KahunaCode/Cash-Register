@@ -6,7 +6,7 @@ var operator;
 // create number buttons
 var button8 = document.querySelector("#eight");
  button8.addEventListener("click", function(){
-   cal.load(8);
+   director(8);
    document.getElementById("display").innerHTML="8";
    console.log(cal.getTotal());
   });
@@ -21,9 +21,6 @@ var button8 = document.querySelector("#eight");
   });
 
 }
-
-
-
 
 // numButton updates cal.total
 // operator button sets var operator = “operator”
@@ -80,3 +77,17 @@ buttonAdd.addEventListener("click", function() {
   document.getElementById("display").innerHTML="+";
   console.log(operator);
 });
+
+var buttonEquals = document.querySelector("#equals");
+  buttonEquals.addEventListener("click", function(){
+  switch (operator) {
+    case "/":
+    cal.total = parseFloat(cal.total);
+
+    cal.divide(parseFloat(holder));
+  console.log("total = " + cal.total + ", holder is " + holder + ", operator is " + operator);
+  break;
+  }
+
+
+  });
