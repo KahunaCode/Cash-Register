@@ -3,7 +3,7 @@
 var memory = [];
 var operator;
 var holder = "";
-var balance = 0;
+var balance = "55";
 
 var buttonClear = document.querySelector("#clear");
 buttonClear.addEventListener("click", function(){
@@ -11,6 +11,11 @@ buttonClear.addEventListener("click", function(){
   operator = "";
   holder = "";
   document.getElementById("display").innerHTML = "0.00";
+});
+
+var buttonBalance = document.querySelector("#getBalance");
+buttonBalance.addEventListener("click", function(){
+  document.getElementById("display").innerHTML = balance;
 });
 
 var button7 = document.querySelector("#seven");
