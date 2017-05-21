@@ -1,4 +1,6 @@
 
+console.log("hey");
+
 var calculatorModule = function(){
 
   var memory = 0;
@@ -51,7 +53,7 @@ var calculatorModule = function(){
     total /= num;
     }
     else{
-      throw new Error("not a number")
+      throw new Error("not a number");
     }
   }
 
