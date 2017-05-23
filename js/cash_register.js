@@ -9,7 +9,7 @@ for (i = 0; i < numButtons.length; i++){
   numButtons[i].addEventListener("click", numHelper);
 }
 
-function numHelper(){
+function numHelper(){//helper function for number buttons
   director(parseFloat(this.textContent));
   console.log(this.textContent);
   document.getElementById("display").innerHTML = this.textContent;
@@ -17,15 +17,15 @@ function numHelper(){
 
 
 
- function opFunction(op, button){
-  button.addEventListener("click", function(){
-  operator = op;
-  document.getElementById("display").innerHTML = op;
-  memory.push(holder);
-  holder = "";
-  });
+//  function opFunction(op, button){
+//   button.addEventListener("click", function(){
+//   operator = op;
+//   document.getElementById("display").innerHTML = op;
+//   memory.push(holder);
+//   holder = "";
+//   });
 
-}
+// }
 
 
 
@@ -106,8 +106,25 @@ var buttonEquals = document.querySelector("#equals");
 
 var buttonClear = document.querySelector("#clear");
 buttonClear.addEventListener("click", function(){
-  cal.clearMemory();
+  //cal.clearMemory();
   operator = "";
   holder = "";
   document.getElementById("display").innerHTML = "0.00";
 });
+
+var buttonBalance = document.querySelector("#getBalance");
+buttonBalance.addEventListener("click", function(){
+  cal.recallMemory();
+  document.getElementById("display").innerHTML = cal.recallMemory();
+});
+
+var buttonDeposit = document.querySelector("#depositCash");
+buttonDeposit.addEventListener("click", function(){
+  cal.saveMemory();
+  document.getElementById("display").innerHTML = cal.recallMemory();
+});
+
+// var buttonWithdraw = document.querySelector("#withdrawCash");
+// buttonWithdraw.addEventListener("click", function(){
+
+// })

@@ -2,7 +2,7 @@
 
 to do:
 ##1- make number buttons inside loop
-2- make command buttons
+2- make command buttons (sorta working, gotta do something with the total and memory)
 3- deal with concatenation issue (234 + 456)
 4- 5+5+5 issue //sorta works, negative numbers issue -5 + 5 = 10
 5- CSS stylzzzzz
