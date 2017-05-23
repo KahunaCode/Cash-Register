@@ -81,21 +81,25 @@ var buttonEquals = document.querySelector("#equals");
     case "/":
     cal.divide(parseFloat(holder));
     console.log("total = " + cal.getTotal() + ", holder is " + holder + ", operator is " + operator);
+    document.getElementById("display").innerHTML=cal.getTotal();
     break;
 
     case "*":
     cal.multiply(parseFloat(holder));
     console.log("total = " + cal.getTotal() + ", holder is " + holder + ", operator is " + operator);
+    document.getElementById("display").innerHTML=cal.getTotal();
     break;
 
     case "-":
     cal.subtract(parseFloat(holder));
     console.log("total = " + cal.getTotal() + ", holder is " + holder + ", operator is " + operator);
+    document.getElementById("display").innerHTML=cal.getTotal();
     break;
 
     case "+":
     cal.add(parseFloat(holder));
     console.log("total = " + cal.getTotal() + ", holder is " + holder + ", operator is " + operator);
+    document.getElementById("display").innerHTML=cal.getTotal();
     break;
   }
   });

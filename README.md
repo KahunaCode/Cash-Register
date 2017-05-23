@@ -1,10 +1,10 @@
 # Cash Register
 
 to do:
-1- make number buttons inside loop
+##1- make number buttons inside loop
 2- make command buttons
 3- deal with concatenation issue (234 + 456)
-4- 5+5+5 issue
+4- 5+5+5 issue //sorta works, negative numbers issue -5 + 5 = 10
 5- CSS stylzzzzz
 
 
@@ -25,26 +25,26 @@ Create an html5 single page app that looks like a cash register with these butto
 
 ```
 
-`( display )` is the primary ui that prints all results  
-`[clear]` will clear the display  
-`[get balance]` will display the current balance  
-`[deposit cash]` will add the amount currently in the `( display )` to the cash register, then clears the display  
-`[withdraw cash]` will remove the amount currently in the `( display )` to the cash register, then clears the display  
+`( display )` is the primary ui that prints all results
+`[clear]` will clear the display
+`[get balance]` will display the current balance
+`[deposit cash]` will add the amount currently in the `( display )` to the cash register, then clears the display
+`[withdraw cash]` will remove the amount currently in the `( display )` to the cash register, then clears the display
 
 ## calculator.js
 
-Write all calculator logic in `calculator.js` using the [revealing module pattern](http://slides.com/jasonsewell/object-literals-and-ze-module-pattern)  
-The module should be named `Calculator` and should only be concerned with performing mathematical computation.  
+Write all calculator logic in `calculator.js` using the [revealing module pattern](http://slides.com/jasonsewell/object-literals-and-ze-module-pattern)
+The module should be named `Calculator` and should only be concerned with performing mathematical computation.
 
 ## cash_register.js
 
-Write the rest of the logic to perform the necessary functions to achieve the goal.  
-You may create modules within `cash_register.js` in order to separate concerns.  
-For example, the function of updating the `( display )` should be handled in one place, or one module, instead of interweaved throughout the spaghetti.  
+Write the rest of the logic to perform the necessary functions to achieve the goal.
+You may create modules within `cash_register.js` in order to separate concerns.
+For example, the function of updating the `( display )` should be handled in one place, or one module, instead of interweaved throughout the spaghetti.
 
 ## index.html
 
-Write all html5 markup in `index.html`  
+Write all html5 markup in `index.html`
 You should import `./js/calculator.js` and `./js/cash_register.js` at the bottom of your `<body>` tag.
 
 ## Running the app
