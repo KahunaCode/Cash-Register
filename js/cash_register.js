@@ -3,40 +3,22 @@ var cal = calculatorModule();
 var holder;
 var operator;
 
-// create number buttons
-
-// var button;
-// numButtons = ["7","8","9","4","5","6","1","2","3","0","00","."];
-// for (i = 0; i < numButtons.length; i++){
-//   button = document.createElement('button');
-//   var numValue = numButtons[i];
-//   button.innerHTML = numButtons[i];
-//   button.addEventListener('click', numFunc);
-//   document.getElementsByClassName("numbers")[0].appendChild(button);
-// }
-
 var numButtons = document.getElementsByClassName("nums");
 console.log(numButtons);
 for (i = 0; i < numButtons.length; i++){
-  numButtons[i].addEventListener("click", numFunc);
+  numButtons[i].addEventListener("click", numHelper);
 }
 
-function numFunc(){
+function numHelper(){
   director(parseFloat(this.textContent));
   console.log(this.textContent);
+  document.getElementById("display").innerHTML = this.textContent;
 }
 
 
-// var button8 = document.querySelector("#eight");
-//   button8.addEventListener("click", function(){
-//   director(8);
-//   console.log(cal.getTotal());
-//   document.getElementById("display").innerHTML="8";
-//   });
 
  function opFunction(op, button){
   button.addEventListener("click", function(){
-
   operator = op;
   document.getElementById("display").innerHTML = op;
   memory.push(holder);
