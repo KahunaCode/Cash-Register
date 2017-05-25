@@ -2,10 +2,12 @@
 var cal = calculatorModule();
 var holder;
 var operator;
+var balance = 0;
+var calcDisplay;
 
 /* MAKE NUMBER BUTTONS
    1. Render number to display when clicked
-   2. Store the number
+   2. Store the number in cal.load()
    3.
 */
 
@@ -18,7 +20,7 @@ for (i = 0; i < numButtons.length; i++){
 function numHelper(){//helper function for number buttons
   director(parseFloat(this.textContent));
   console.log(this.textContent);
-  document.getElementById("display").innerHTML = this.textContent;
+  display.innerHTML = this.textContent;
 }
 
 
@@ -56,28 +58,28 @@ function director(aaa){
 var buttonDivide = document.querySelector("#divide");
 buttonDivide.addEventListener("click", function() {
   director("/");
-  document.getElementById("display").innerHTML="/";
+  display.innerHTML = "/";
   console.log(operator);
 });
 
 var buttonMultiply = document.querySelector("#multiply");
 buttonMultiply.addEventListener("click", function() {
   director("*");
-  document.getElementById("display").innerHTML="*";
+  display.innerHTML = "*";
   console.log(operator);
 });
 
 var buttonSubtract = document.querySelector("#subtract");
 buttonSubtract.addEventListener("click", function() {
   director("-");
-  document.getElementById("display").innerHTML="-";
+  display.innerHTML = "-";
   console.log(operator);
 });
 
 var buttonAdd = document.querySelector("#add");
 buttonAdd.addEventListener("click", function() {
   director("+");
-  document.getElementById("display").innerHTML="+";
+  display.innerHTML = "+";
   console.log(operator);
 });
 
@@ -87,25 +89,25 @@ var buttonEquals = document.querySelector("#equals");
     case "/":
     cal.divide(parseFloat(holder));
     console.log("total = " + cal.getTotal() + ", holder is " + holder + ", operator is " + operator);
-    document.getElementById("display").innerHTML=cal.getTotal();
+    display.innerHTML = cal.getTotal();
     break;
 
     case "*":
     cal.multiply(parseFloat(holder));
     console.log("total = " + cal.getTotal() + ", holder is " + holder + ", operator is " + operator);
-    document.getElementById("display").innerHTML=cal.getTotal();
+    display.innerHTML = cal.getTotal();
     break;
 
     case "-":
     cal.subtract(parseFloat(holder));
     console.log("total = " + cal.getTotal() + ", holder is " + holder + ", operator is " + operator);
-    document.getElementById("display").innerHTML=cal.getTotal();
+    display.innerHTML = cal.getTotal();
     break;
 
     case "+":
     cal.add(parseFloat(holder));
     console.log("total = " + cal.getTotal() + ", holder is " + holder + ", operator is " + operator);
-    document.getElementById("display").innerHTML=cal.getTotal();
+    display.innerHTML = cal.getTotal();
     break;
   }
   });
@@ -113,27 +115,43 @@ var buttonEquals = document.querySelector("#equals");
 var buttonClear = document.querySelector("#clear");
 buttonClear.addEventListener("click", function(){
   cal.clearMemory();
-  // console.log(cal.clearMemory());
   cal.load(0);
-  // console.log(cal.load(0));
   operator = "";
   holder = "";
-  document.getElementById("display").innerHTML = "0.00";
+  display.innerHTML = "0.00";
 });
+
+/* Balance button:
+   1. Renders the current balance to the display
+*/
 
 var buttonBalance = document.querySelector("#getBalance");
 buttonBalance.addEventListener("click", function(){
-  cal.recallMemory();
-  document.getElementById("display").innerHTML = cal.recallMemory();
+  display.innerHTML = balance;
 });
+
+/* Deposit button:
+   1. Takes number in the display and adds it to the balance
+   2. Clears the display
+*/
 
 var buttonDeposit = document.querySelector("#depositCash");
 buttonDeposit.addEventListener("click", function(){
-  cal.saveMemory();
-  document.getElementById("display").innerHTML = cal.recallMemory();
+  balance += parseFloat(display.innerHTML);
+  display.innerHTML = "0.00";
+  console.log(balance);
 });
 
-// var buttonWithdraw = document.querySelector("#withdrawCash");
-// buttonWithdraw.addEventListener("click", function(){
+/* Deposit button:
+   1. Takes number in the display and adds it to the balance variable
+   2. Clears the display
+*/
+var buttonWithdraw = document.querySelector("#withdrawCash");
+buttonWithdraw.addEventListener("click", function(){
+  balance -= parseFloat(display.innerHTML);
+  display.innerHTML = "0.00";
+  console.log(balance);
+});
 
-// })
+
+
