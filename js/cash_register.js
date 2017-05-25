@@ -3,6 +3,12 @@ var cal = calculatorModule();
 var holder;
 var operator;
 
+/* MAKE NUMBER BUTTONS
+   1. Render number to display when clicked
+   2. Store the number
+   3.
+*/
+
 var numButtons = document.getElementsByClassName("nums");
 console.log(numButtons);
 for (i = 0; i < numButtons.length; i++){
@@ -106,7 +112,10 @@ var buttonEquals = document.querySelector("#equals");
 
 var buttonClear = document.querySelector("#clear");
 buttonClear.addEventListener("click", function(){
-  //cal.clearMemory();
+  cal.clearMemory();
+  // console.log(cal.clearMemory());
+  cal.load(0);
+  // console.log(cal.load(0));
   operator = "";
   holder = "";
   document.getElementById("display").innerHTML = "0.00";
